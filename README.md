@@ -1,36 +1,108 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🖼️ Removedor de Fundo - Next.js + Python (rembg)
 
-## Getting Started
+Este é um **Removedor de Fundo de Imagens** desenvolvido com **Next.js** e **Python (Flask + rembg)**. 
 
-First, run the development server:
+✅ **Frontend** moderno usando **Next.js 15** + **shadcn/ui**  
+✅ **Backend** em **Python (Flask)** para processar imagens usando **rembg**  
+✅ **Upload intuitivo**, **animações fluidas** e **download da imagem sem fundo**  
+✅ **Feedback ao usuário** com notificações via **Sonner**  
+✅ **Compatível com imagens PNG, JPG e JPEG**  
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## 🚀 **Tecnologias Usadas**
+
+### **🖥️ Frontend (Next.js 15)**
+- **Next.js 15 (App Router)**
+- **TypeScript**
+- **shadcn/ui** (UI moderna)
+- **Sonner** (Notificações)
+- **Framer Motion** (Animações)
+- **Tailwind CSS** (Estilização)
+
+### **⚙️ Backend (Python)**
+- **Flask** (Servidor HTTP)
+- **rembg** (Remoção de fundo da imagem)
+- **Pillow** (Manipulação de imagens)
+
+---
+
+## 📂 **Estrutura do Projeto**
+
+```
+📦 remove-bg-app
+├── 📂 app
+│   ├── 📂 api
+│   │   ├── 📜 remove-bg/route.ts  # API Next.js para processar imagens
+│   ├── 📂 components
+│   │   ├── 📜 ImageUploader.tsx   # Componente de upload
+│   ├── 📜 layout.tsx              # Layout global
+│   ├── 📜 page.tsx                # Página principal
+├── 📂 public
+│   ├── 📂 output                  # Onde as imagens processadas são salvas
+├── 📂 server-python               # Pasta do servidor Python
+│   ├── 📜 server.py                # Servidor Flask (rembg)
+│   ├── 📜 requirements.txt         # Dependências Python
+├── 📜 package.json                 # Dependências do Next.js
+├── 📜 README.md                    # Documentação do projeto
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## ⚡ **Passo a Passo para Rodar o Projeto**
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 1️⃣ **Configurar e Rodar o Servidor Python (`rembg`)**
 
-## Learn More
+> O backend precisa estar rodando para o Next.js processar as imagens.
 
-To learn more about Next.js, take a look at the following resources:
+#### **📥 Instalar Dependências**
+```sh
+cd server-python
+python -m venv venv
+# Ativar ambiente virtual:
+# Windows:
+venv\Scripts\activate
+# Linux/macOS:
+source venv/bin/activate
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+pip install -r requirements.txt
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+#### **▶️ Rodar o Servidor**
+```sh
+python server.py
+```
+✅ O servidor **rodará na porta `5000`**. Se estiver tudo certo, verá a mensagem:
+```
+ * Running on http://127.0.0.1:5000
+```
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 2️⃣ **Configurar e Rodar o Next.js**
+Agora, no terminal, vá para a pasta do **Next.js** e instale as dependências:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```sh
+cd ../remove-bg-app
+npm install
+```
+
+#### **▶️ Rodar o Next.js**
+```sh
+npm run dev
+```
+
+✅ O frontend **rodará na porta `3000`**.  
+Acesse **http://localhost:3000** no navegador.
+
+---
+
+## 🎯 **Como Usar**
+1. **Carregue uma imagem** (PNG, JPG ou JPEG).
+2. **Clique em "Remover Fundo"** e aguarde o processamento.
+3. **Baixe a imagem sem fundo** clicando no botão "📥 Baixar Imagem".
+
+---
+
+## 💡 **Créditos**
+Projeto desenvolvido por **Amílcar Júnior**.  
